@@ -36,7 +36,7 @@ const bacaData = (fnCallback) => {
       }
 
       const jsonData2 = JSON.parse(data);
-      arrHasil.push(jsonData2[0].message.split('halo ').join(' '));
+      arrHasil.push(jsonData2[0].message.split('halo ').join(''));
 
       //call dataJson 3
       fs.readFile(file3, { encoding: "utf-8" }, (err, data) => {
@@ -44,7 +44,7 @@ const bacaData = (fnCallback) => {
           return fnCallback(err, null);
         }
         const jsonData3 = JSON.parse(data);
-        arrHasil.push(jsonData3[0]['data'].message.split('halo ').join(' '));
+        arrHasil.push(jsonData3[0]['data'].message.split('halo ').join(''));
         fnCallback(null, arrHasil);
       });
     });
